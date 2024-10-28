@@ -15,6 +15,8 @@ repositories {
     mavenCentral()
 }
 
+
+sourceCompatibility=17
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
@@ -28,7 +30,7 @@ dependencies {
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(171)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
