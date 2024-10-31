@@ -14,6 +14,5 @@ items.add("항목3");
 <%
     LocalDateTime now = LocalDateTime.now();
 %>
-
 <h1><%=now%></h1>
 <h1><%=getServletInfo()%>

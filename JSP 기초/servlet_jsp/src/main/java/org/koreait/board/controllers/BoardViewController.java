@@ -12,25 +12,24 @@ import java.io.PrintWriter;
 
 @WebServlet("/board/view")
 public class BoardViewController extends HttpServlet {
-  /*  @Override
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      RequestDispatcher rd = req.getRequestDispatcher("/board/view.jsp");
-      rd.forward(req.resp);
-    }*/
 
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/templates/board/view.jsp");
+        rd.forward(req, resp);
+    }
 
-    /* @Override
+    /*
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       resp.setContentType("text/html; charset=UTF-8");
+        resp.setContentType("text/html; charset=UTF-8");
         RequestDispatcher rd = req.getRequestDispatcher("/outlines/header.jsp");
-        rd.include(req.resp);
-
-
+        rd.include(req, resp);
 
         PrintWriter out = resp.getWriter();
-        out.write("<main><h1>메인영역...</h1></main>1");
+        out.write("<main><h1>메인 영역...</h1></main>");
 
-        RequestDispatcher rd2 = req.getRequestDispatcher("/outlinces/footer.jsp");
-        rd2.include(req.resp);
-    }*/
+        RequestDispatcher rd2 = req.getRequestDispatcher("/outlines/footer.jsp");
+        rd2.include(req, resp);
+    } */
 }
