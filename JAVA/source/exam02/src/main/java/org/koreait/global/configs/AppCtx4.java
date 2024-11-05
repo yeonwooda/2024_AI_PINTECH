@@ -10,7 +10,7 @@ import org.springframework.context.annotation.FilterType;
 @ComponentScan(basePackages = "org.koreait.member" // ComponentScan 탐색 시작 위치
        /* , excludeFilters = @ComponentScan.Filter(type= FilterType.ANNOTATION, classes = ManualBean.class ))*/
 /*        , excludeFilters =  @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, classes = MemberRepository.class)*/
-        , excludeFilters = @ComponentScan.Filter(type= FilterType.ASPECTJ),
+        , excludeFilters = @ComponentScan.Filter(type= FilterType.ASPECTJ,
         pattern="org.koreait..*Repository")
 
 )
