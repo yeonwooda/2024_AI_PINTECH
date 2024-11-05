@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 @Configuration
 public class AppCtx3 {
 
-    @Bean
+    /*@Bean
     public JoinValidator joinValidator() {
         return new JoinValidator();
     }
@@ -23,7 +23,7 @@ public class AppCtx3 {
     // @Qualifier("mRepo") // 한정자 이름 바꾸는
     public MemberRepository memberRepository() {
         return new MemberRepository();
-    }
+    }*/
 
 /*    @Bean
     @Qualifier("mRepo2")
@@ -32,6 +32,7 @@ public class AppCtx3 {
     }*/
 
 
+/*
     @Bean
     public JoinService joinService() {
         return new JoinService();
@@ -41,6 +42,7 @@ public class AppCtx3 {
     public InfoService infoService() {
         return new InfoService();
     }
+*/
 
     @Bean
     public DateTimeFormatter formatter() {

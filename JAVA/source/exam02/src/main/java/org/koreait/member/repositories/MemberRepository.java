@@ -1,7 +1,9 @@
 package org.koreait.member.repositories;
 
+import org.koreait.global.configs.ManualBean;
 import org.koreait.member.controllers.RequestJoin;
 import org.koreait.member.entities.Member;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -9,7 +11,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MemberRepository {
+/**
+ * 영구 저장 처리 또는 조회, 삭제 ..
+ *
+ */
+@Repository
+@ManualBean
+public class MemberRepository { // memberRepository
 
     private static final Map<String, Member> members = new HashMap<>();
 
