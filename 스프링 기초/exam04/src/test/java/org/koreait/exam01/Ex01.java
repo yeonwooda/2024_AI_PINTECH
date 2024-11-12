@@ -29,7 +29,6 @@ public class Ex01 {
         System.out.println(conn);
     }
 
-
     @AfterEach
     void close() throws Exception {
         conn.close();
