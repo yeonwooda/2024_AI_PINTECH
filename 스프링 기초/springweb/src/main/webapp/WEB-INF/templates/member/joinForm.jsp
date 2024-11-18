@@ -19,7 +19,6 @@ ${requestJoin}
             <input type="password" name="confirmPassword">
         </dd>
     </dl>
-
     <dl>
         <dt>취미</dt>
         <dd>
@@ -34,7 +33,6 @@ ${requestJoin}
             </labe>
         </dd>
     </dl>
-
     <dl>
         <dt>주소</dt>
         <dd>
