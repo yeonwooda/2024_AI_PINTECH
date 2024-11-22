@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class RequestQuestion {
-
     // step1
     private String q1;
     private String q2;
@@ -19,6 +18,4 @@ public class RequestQuestion {
     private String q7;
     private String q8;
     private String q9;
-
-
 }
