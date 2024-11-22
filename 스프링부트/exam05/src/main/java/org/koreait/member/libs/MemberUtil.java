@@ -13,6 +13,4 @@ public class MemberUtil {
 
         return session.getAttribute("loggedMember") != null;
     }
-
-
 }

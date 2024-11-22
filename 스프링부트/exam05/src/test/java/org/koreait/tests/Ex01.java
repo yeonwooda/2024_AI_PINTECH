@@ -13,13 +13,11 @@ public class Ex01 {
     @Autowired
     private MessageSource ms;
 
-
     @Test
     void test1() {
         String email = ms.getMessage("이메일", null, Locale.KOREAN);
         String emailEn = ms.getMessage("이메일", null, Locale.ENGLISH);
         System.out.println(email);
         System.out.println(emailEn);
-
     }
 }
