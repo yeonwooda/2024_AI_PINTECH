@@ -8,7 +8,8 @@ import org.springframework.http.HttpStatus;
  * 예외 발생하면
  * alert('메세지');  -> target .. history.back()
  */
-@Getter @Setter
+@Getter
+@Setter
 public class AlertBackException extends AlertException {
 
     private String target;

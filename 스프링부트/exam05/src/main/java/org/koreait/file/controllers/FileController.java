@@ -19,7 +19,6 @@ public class FileController {
     @Autowired
     private Greet greet;
 
-
     @Value("${file.upload.path}") // 설정값을 주입
     private String filePath;
 

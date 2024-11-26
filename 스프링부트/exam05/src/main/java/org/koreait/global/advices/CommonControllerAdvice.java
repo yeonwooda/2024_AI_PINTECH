@@ -27,6 +27,7 @@ public class CommonControllerAdvice {
 
     /**
      * org.koreait 패키지를 포함한 하위 패키지의 모든 컨트롤러에서 공유할 값
+     *
      * @return
      */
     @ModelAttribute("isLogin")

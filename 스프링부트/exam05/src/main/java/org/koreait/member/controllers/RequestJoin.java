@@ -12,7 +12,7 @@ public class RequestJoin {
     @NotBlank
     private String email;
 
-    @Size(min=8) // 8자리 이상 문자열
+    @Size(min = 8) // 8자리 이상 문자열
     @NotBlank
     private String password;
 
