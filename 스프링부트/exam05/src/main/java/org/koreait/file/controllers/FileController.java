@@ -40,8 +40,7 @@ public class FileController {
         File uploadPath = new File(filePath + _file.getOriginalFilename());
         try {
             _file.transferTo(uploadPath); // 임시 저장공간에 있는 파일 -> 지정한 서버 경로 이동
-        } catch (IOException e) {
-        }
+        } catch (IOException e) {}
 
         log.info("file2 : {}", file2.getOriginalFilename());
     }

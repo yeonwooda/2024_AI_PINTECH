@@ -2,11 +2,8 @@ package org.koreait.jpaex;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.koreait.member.entities.Member;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,10 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class Ex04 {
 
     @PersistenceContext
-    // @Autowired
     private EntityManager em;
-
-  /*  @BeforeEach
+    /*
+    @BeforeEach
     void init() {
         em.getTransaction().begin();
     }
@@ -28,7 +24,8 @@ public class Ex04 {
     @AfterEach
     void destroy() {
         em.getTransaction().commit();
-    }*/
+    }
+    */
 
     @Test
     void test1() {
@@ -58,8 +55,6 @@ public class Ex04 {
         em.clear();
         member1 = em.find(Member.class, 1L);
         System.out.printf("member1.regDt:%s, member1.modDt:%s%n", member1.getRegDt(), member1.getModDt());
-        
 
     }
-
 }

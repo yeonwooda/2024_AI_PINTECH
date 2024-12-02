@@ -52,10 +52,9 @@ public class MemberController {
 
     /**
      * 회원 가입 처리!
-     *
-     * @return
      * @Valid : 검증할 커맨드 객체임을 알려준다!
      * @Valid이 있으면 반드시 Errors 객체는 커맨드 객체 바로 다음에 나와야 한다!
+     * @return
      */
     @PostMapping("/join")
     public String joinPs(@Valid RequestJoin form, Errors errors) {
@@ -68,11 +67,11 @@ public class MemberController {
 
         // 검증 성공시 - 가입 처리 서비스 호출
 
-        return "redirect:/member/login"; // 가입 성공시 로그인 페이지로 이동
+       return "redirect:/member/login"; // 가입 성공시 로그인 페이지로 이동
     }
 
     @GetMapping("/login")
-    public String login(@ModelAttribute RequestLogin form, @CookieValue(name = "savedEmail", required = false) String savedEmail) {
+    public String login(@ModelAttribute RequestLogin form, @CookieValue(name="savedEmail", required = false) String savedEmail) {
         /*
         if (true) {
             throw new AlertRedirectException("테스트 예외", "/member/join", HttpStatus.BAD_REQUEST);

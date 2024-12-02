@@ -5,6 +5,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
  * 사이트 모든 페이지의 공통 처리 부분
+ *
  */
 @Component
 public class CommonInterceptor implements HandlerInterceptor {

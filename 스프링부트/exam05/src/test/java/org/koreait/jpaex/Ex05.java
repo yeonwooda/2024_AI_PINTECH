@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest
-@ActiveProfiles({"default", "test"})
+@ActiveProfiles({"default", "test"})  // -Dspring.profiles.active=default,test
 public class Ex05 {
 
     @Autowired
@@ -29,12 +29,11 @@ public class Ex05 {
             member.setName("사용자" + i);
             member.setAuthority(Authority.USER);
             members.add(member);
-            // repository.save(member); // persist(...)
+            //repository.save(member);  // persist(...)
         }
-
         //repository.saveAll(members);
-        //repository.flush(); // DB에 영구 반영
-        repository.saveAllAndFlush(members); // 이렇게 ㄷ ㅓ 많이 사용
+       // repository.flush(); //DB에 영구 반영
+        repository.saveAllAndFlush(members);
     }
 
     @Test
@@ -42,7 +41,6 @@ public class Ex05 {
         List<Member> members = repository.findAll();
         members.forEach(System.out::println);
     }
-
 
     @Test
     void test2() {
