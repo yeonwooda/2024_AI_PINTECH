@@ -17,7 +17,6 @@ public class MvcConfig implements WebMvcConfigurer {
 
     /**
      * 모든 @Valid가 적용된 커맨드 객체 검증에 사용
-     *
      * @return
      */
     /*

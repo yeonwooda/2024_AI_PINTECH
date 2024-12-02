@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
-@Getter
-@Setter
+@Getter @Setter
 public class CommonException extends RuntimeException {
     private HttpStatus status;
     private boolean errorCode; // message가 에러 코드인지 여부

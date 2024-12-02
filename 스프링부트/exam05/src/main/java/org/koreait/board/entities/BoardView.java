@@ -8,10 +8,10 @@ import lombok.Data;
 
 @Data
 @Entity
-@IdClass(BoardView.class)
+@IdClass(BoardViewId.class)
 public class BoardView {
     @Id
-    @Column(name = "_UID")
+    @Column(name="_UID")
     private int uid; // 회원 Unique ID
 
     @Id

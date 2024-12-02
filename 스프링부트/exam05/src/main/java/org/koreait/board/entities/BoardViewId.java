@@ -8,5 +8,4 @@ import lombok.EqualsAndHashCode;
 public class BoardViewId {
     private int uid;
     private long seq;
-
 }

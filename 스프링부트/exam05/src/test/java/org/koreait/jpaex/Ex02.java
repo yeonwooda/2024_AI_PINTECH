@@ -38,7 +38,8 @@ public class Ex02 {
     void test1() {
         member.setName("(수정)사용자01");
         em.flush();
-        em.detach(member); // 영속성 분리 상태 - 변화감지 x
+
+        em.detach(member); // 영속성 분리 상태 - 변화감지 X
 
         member.setName("(수정2)사용자01");
 
@@ -46,15 +47,12 @@ public class Ex02 {
 
         /**
          * 분리된 상태의 엔티티의 변경 상태를 비교하기 위해서
-         * SELECT문이  한 번 수행되고 DB와 차이가 있는 경우 UPDATE를 실행
+         * SELECT 문이 한번 수행되고 DB와 차이가 있는 경우 UPDATE를 실행
          */
-        em.merge(member); // 영속성 상태로 변경 - 변화 감지 0
+        em.merge(member); // 영속성 상태로 변경 - 변화감지 O
 
         member.setPassword("(수정)12345678");
 
         em.flush();
-
     }
-
-
 }

@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor
 public class BoardView2Id {
 
-    @Column(name = "_UID")
+    @Column(name="_UID")
     private int uid;
     private long seq;
 }
