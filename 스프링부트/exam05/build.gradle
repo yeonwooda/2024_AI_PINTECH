@@ -41,27 +41,24 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
 
-    testImplementation 'com.h2database:h2'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    testImplementation('com.github.javafaker:javafaker:1.0.2') { exclude module: 'snakeyaml' }
-    testImplementation group: 'org.yaml', name: 'snakeyaml', version: '2.2'
-
     implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
     annotationProcessor 'com.querydsl:querydsl-apt:5.1.0:jakarta'
 
-
+    testImplementation('com.github.javafaker:javafaker:1.0.2') { exclude module: 'snakeyaml' }
+    testImplementation group: 'org.yaml', name: 'snakeyaml', version: '2.2'
+    testImplementation 'com.h2database:h2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
 
-
 def querydslDir = layout.buildDirectory.dir("generated/querydsl").get().asFile
 
 sourceSets {
-    main.java.srcDirs += { querydslDir }
+    main.java.srcDirs += [querydslDir]
 }
 
 tasks.withType(JavaCompile) {
@@ -71,4 +68,3 @@ tasks.withType(JavaCompile) {
 clean.doLast {
     file(querydslDir).deleteDir()
 }
-
