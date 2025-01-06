@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.koreait.member.controllers.RequestJoin;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -29,11 +30,12 @@ public class Ex01 {
         om = new ObjectMapper();
         om.registerModule(new JavaTimeModule());
 
-        restTemplate =  new RestTemplate();
+        restTemplate = new RestTemplate();
     }
 
     @Test
     void test1() throws Exception {
+
         RequestJoin form = new RequestJoin();
         form.setEmail("user01@test.org");
         form.setPassword("1234");
@@ -42,7 +44,7 @@ public class Ex01 {
 
         String json = om.writeValueAsString(form); // 자바 객체 -> JSON 문자열
         System.out.println(json);
-        
+
         // JSON 문자열 -> 자바 객체 변환
         RequestJoin form2 = om.readValue(json, RequestJoin.class); // 단일 클래스 형태의 자료형으로 변환 Class 클래스가 매개변수
         System.out.println("form2 : " + form2);
@@ -52,15 +54,15 @@ public class Ex01 {
     void test2() throws Exception {
         List<RequestJoin> items = IntStream.rangeClosed(1, 10)
                 .mapToObj(i -> RequestJoin.builder()
-                        .email("user" + i + "test.org")
+                        .email("user" + i + "@test.org")
                         .password("1234")
                         .confirmPassword("1234")
                         .name("사용자" + i).build()).toList();
 
         String json = om.writeValueAsString(items);
         System.out.println(json);
-        
-        // List<T>, Map<K, V>, Set<...> -> TypeReference(추상클래스) 객체
+
+        // List<T>, Map<K, V>, Set<...>  -> TypeReference(추상클래스) 객체
         //List<RequestJoin> items2 = om.readValue(json, new TypeReference<List<RequestJoin>>() {});
         List<RequestJoin> items2 = om.readValue(json, new TypeReference<>() {});
         items2.forEach(System.out::println);
@@ -91,12 +93,12 @@ public class Ex01 {
     @Test
     void test5() {
         String url = "https://jsonplaceholder.typicode.com/posts/1";
-        // ResponseEntity<String> response = restTemplate.getForEntity(URI.create(url), String.class);
+        //ResponseEntity<String> response = restTemplate.getForEntity(URI.create(url), String.class);
         ResponseEntity<Post> response = restTemplate.getForEntity(URI.create(url), Post.class);
         HttpStatusCode status = response.getStatusCode();
         System.out.println("status:" + status);
         HttpHeaders headers = response.getHeaders(); // 응답 헤더
         System.out.println("headers:" + headers);
-        System.out.println("body" + response.getBody());
+        System.out.println("body:" + response.getBody());
     }
 }
